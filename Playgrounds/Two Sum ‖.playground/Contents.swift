@@ -1,6 +1,6 @@
 import UIKit
 
-// 167题: Two Sum ‖
+// Two Sum ‖
 
 // 给定一个已按照升序排列的有序数组，找到两个数使得它们相加之和等于目标数。
 // 函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
@@ -21,6 +21,7 @@ import UIKit
 
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
+
 func twoSum(nums: [Int], target: Int) -> (index1: Int, index2: Int) {
     var index1 = 0
     var index2 = nums.count - 1
@@ -35,6 +36,7 @@ func twoSum(nums: [Int], target: Int) -> (index1: Int, index2: Int) {
     }
     return (0, 0)
 }
+
 let nums = [2, 7, 11, 15]
 let target = 9
-print(twoSum(nums: nums, target: target))
+assert(twoSum(nums: nums, target: target) == (1, 2), "Algorithm error")

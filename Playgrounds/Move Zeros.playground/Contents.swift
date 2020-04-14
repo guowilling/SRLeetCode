@@ -1,30 +1,12 @@
 import UIKit
 
-// 283题: Move Zeros
+// Move Zeros
 
 // 给定一个数组 nums，写一个函数，将数组中所有的0挪到数组的末尾，⽽维持其他所有非0元素的相对位置。
 // 举例: nums = [0, 1, 0, 3, 12]，函数运⾏后结果为[1, 3, 12, 0, 0]
 
-// 解法一:
-// 时间复杂度: O(n)
-// 空间复杂度: O(1)
-func moveZeros1(nums: [Int]) -> [Int] {
-    var nonZeroElements: [Int] = [Int]()
-    for num in nums {
-        if num != 0 {
-            nonZeroElements.append(num)
-        }
-    }
-    for _ in 0..<(nums.count - nonZeroElements.count) {
-        nonZeroElements[0] = nonZeroElements[1]
-        nonZeroElements.append(0)
-    }
-    return nonZeroElements
-}
-var nums1 = [0, 1, 0, 3, 12]
-print(moveZeros1(nums: nums1))
 
-// 解法二
+// 解法一
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
 func moveZeros2(nums: inout [Int]) -> [Int] {
@@ -41,7 +23,8 @@ func moveZeros2(nums: inout [Int]) -> [Int] {
     return nums
 }
 var nums2 = [0, 1, 0, 3, 12]
-print(moveZeros2(nums: &nums2))
+moveZeros2(nums: &nums2)
+assert(nums2 == [1, 3, 12, 0, 0], "Algorithm Error")
 
 // 解法三
 // 思路：非零元素与之前的零元素进行交换
@@ -64,4 +47,5 @@ func moveZeros3(nums: inout [Int]) -> [Int] {
     return nums
 }
 var nums3 = [0, 1, 0, 3, 12]
-print(moveZeros3(nums: &nums3))
+moveZeros3(nums: &nums3)
+assert(nums3 == [1, 3, 12, 0, 0], "Algorithm Error")

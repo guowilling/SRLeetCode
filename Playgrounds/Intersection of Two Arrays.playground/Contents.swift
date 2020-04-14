@@ -1,8 +1,8 @@
 import UIKit
 
-// 349题: Intersection of Two Arrays
+// Intersection of Two Arrays
 
-/// 给定两个数组，编写一个函数来计算它们的交集。
+// 给定两个数组，编写一个函数来计算它们的交集。
 // 示例 1:
 // 输入: nums1 = [1,2,2,1], nums2 = [2,2]
 // 输出: [2]
@@ -13,6 +13,7 @@ import UIKit
 
 // 时间复杂度: O(nlogn)
 // 空间复杂度: O(n)
+
 func intersectionOfTwoArrays(nums1: [Int], nums2: [Int]) -> [Int] {
     var result = [Int]()
     var nums1Set = [Int]()
@@ -30,8 +31,11 @@ func intersectionOfTwoArrays(nums1: [Int], nums2: [Int]) -> [Int] {
     }
     return result
 }
-//let nums1 = [1, 2, 2, 1]
-//let nums2 = [2, 2]
-let nums1 = [4, 9, 5]
-let nums2 = [9, 4, 9, 8, 4]
-print(intersectionOfTwoArrays(nums1: nums1, nums2: nums2))
+
+let nums1 = [1, 2, 2, 1]
+let nums2 = [2, 2]
+assert(intersectionOfTwoArrays(nums1: nums1, nums2: nums2) == [2], "Algorithm Error")
+
+let nums3 = [4, 9, 5]
+let nums4 = [9, 4, 9, 8, 4]
+assert(intersectionOfTwoArrays(nums1: nums3, nums2: nums4) == [9, 4], "Algorithm Error")
