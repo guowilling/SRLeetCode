@@ -1,32 +1,25 @@
 import UIKit
 
-// Two Sum
+// 1.两数之和
 
-// 给定一个整数数组和一个目标值，找出数组中和为目标值的两个数。
-// 你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。
-// 示例:
-// 给定 nums = [2, 7, 11, 15], target = 9
-// 因为 nums[0] + nums[1] = 2 + 7 = 9
-// 所以返回 [0, 1]
-
-// 时间复杂度(n2)
+// 链接: https://leetcode-cn.com/problems/two-sum/
+// 要点: 顺序遍历目标数组, 利用哈希表(Dictionary)查找元素时间复杂度O(1)的特性,
+//      以元素值为 Key, 元素索引为 Value 暂存, 暂存字典中若存在 target - num 的键值对, 即命中返回.
+// 时间复杂度(n)
 // 空间复杂度(n)
 
-func twoSum(nums: [Int], target: Int) -> (index1: Int, index2: Int) {
-    var numsMap = [Int: Int]()
-    var matching = 0
-    for (i, num) in nums.enumerated() {
-        matching = target - num
-        for (key, value) in numsMap {
-            if value == matching {
-                return (key, i)
+class Solution {
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+        var maybeAddendDic = [Int: Int]()
+        for (index, num) in nums.enumerated() {
+            if let lastIndex = maybeAddendDic[target - num] {
+                return [lastIndex, index]
             }
+            maybeAddendDic[num] = index
         }
-        numsMap[i] = num
+        return []
     }
-    return (0, 0)
 }
 
-let nums = [2, 7, 11, 15]
-let target = 9
-assert(twoSum(nums: nums, target: target) == (0, 1), "Algorithm Error")
+let s = Solution()
+assert(s.twoSum([2,7,11,15], 9) == [0, 1])
