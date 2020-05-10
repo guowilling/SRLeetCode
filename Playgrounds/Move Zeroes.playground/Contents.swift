@@ -13,8 +13,8 @@ class Solution {
         var notZeroIndex = 0
         for (index, num) in nums.enumerated() {
             if num != 0 {
-                if notZeroIndex != index {
-                    nums.swapAt(notZeroIndex, index)
+                if index != notZeroIndex {
+                    nums.swapAt(index, notZeroIndex)
                 }
                 notZeroIndex += 1
             }
