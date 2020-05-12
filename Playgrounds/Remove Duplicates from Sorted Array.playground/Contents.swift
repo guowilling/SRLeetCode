@@ -18,7 +18,6 @@ class Solution {
             }
         }
         nums.removeLast(nums.count - (notDupIndex + 1))
-        print(nums)
         return nums.count
     }
 }
