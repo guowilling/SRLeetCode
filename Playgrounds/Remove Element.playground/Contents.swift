@@ -4,8 +4,8 @@ import UIKit
 //
 // 链接: https://leetcode-cn.com/problems/remove-element/
 // 要点: 数组变换, 快速排序的思想, 使用双指针, 一个顺序遍历数组元素, 一个记录最后非删除元素索引位置, 遍历到非删除元素并且两个指针位置不相等时就进行交换
-// 时间复杂度(n)
-// 空间复杂度(1)
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
 
 class Solution {
     func removeElement(_ nums: inout [Int], _ val: Int) -> Int {

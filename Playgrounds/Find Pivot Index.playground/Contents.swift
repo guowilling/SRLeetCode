@@ -4,8 +4,8 @@ import UIKit
 //
 // 链接: https://leetcode-cn.com/problems/find-pivot-index/
 // 要点: 两次遍历, 一次求总和, 一次渐进判断求和
-// 时间复杂度(n)
-// 空间复杂度(1)
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
 
 class Solution {
     func pivotIndex(_ nums: [Int]) -> Int {

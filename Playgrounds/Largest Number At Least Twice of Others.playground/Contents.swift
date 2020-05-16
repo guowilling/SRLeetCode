@@ -4,8 +4,8 @@ import UIKit
 //
 // 链接: https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/
 // 要点: 两次遍历, 一次求最大值和其索引, 一次判断最大值是否大于除自身外, 其他元素值的两倍
-// 时间复杂度(n)
-// 空间复杂度(1)
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
 
 class Solution {
     func dominantIndex(_ nums: [Int]) -> Int {
