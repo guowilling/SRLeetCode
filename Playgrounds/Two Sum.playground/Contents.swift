@@ -10,16 +10,16 @@ import UIKit
 
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var maybeAddendDic = [Int: Int]()
+        var addedDict = [Int: Int]()
         for (index, num) in nums.enumerated() {
-            if let lastIndex = maybeAddendDic[target - num] {
+            if let lastIndex = addedDict[target - num] {
                 return [lastIndex, index]
             }
-            maybeAddendDic[num] = index
+            addedDict[num] = index
         }
         return []
     }
 }
 
 let s = Solution()
-assert(s.twoSum([2,7,11,15], 9) == [0, 1])
+assert(s.twoSum([2, 7, 11, 15], 9) == [0, 1])
