@@ -1,8 +1,8 @@
 import UIKit
 
 // 155. 最小栈
-// 时间复杂度：O(1)
-// 空间复杂度：O(N)
+// 时间复杂度: O(1)
+// 空间复杂度: O(N)
 
 class MinStack {
 
