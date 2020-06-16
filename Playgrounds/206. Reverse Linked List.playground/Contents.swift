@@ -1,6 +1,13 @@
 //
 // 206. 反转链表
 //
+// https://leetcode-cn.com/problems/reverse-linked-list/
+//
+// 反转一个单链表。
+// 示例:
+//      输入: 1->2->3->4->5->NULL
+//      输出: 5->4->3->2->1->NULL
+//
 
 class ListNode {
     var val: Int
@@ -11,6 +18,7 @@ class ListNode {
     }
 }
 
+/// O(n), O(1)
 class Solution {
     func reverseList(_ head: ListNode?) -> ListNode? {
         var prev: ListNode? = nil

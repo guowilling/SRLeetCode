@@ -1,6 +1,24 @@
 //
 // 226. 翻转二叉树
 //
+// https://leetcode-cn.com/problems/invert-binary-tree/
+//
+// 翻转一棵二叉树。
+// 示例：
+// 输入：
+//           4
+//         /   \
+//        2     7
+//       / \   / \
+//      1   3 6   9
+//
+// 输出：
+//           4
+//         /   \
+//        7     2
+//       / \   / \
+//      9   6 3   1
+//
 
 class TreeNode {
     var val: Int
@@ -13,6 +31,7 @@ class TreeNode {
     }
 }
 
+/// O(n), O(n)
 class Solution {
     func invertTree(_ root: TreeNode?) -> TreeNode? {
         guard let root = root else { return nil }
