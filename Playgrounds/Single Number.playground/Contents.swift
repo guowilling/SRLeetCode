@@ -25,7 +25,7 @@ class Solution1 {
 /// 时间复杂度: O(n)
 /// 空间复杂度: O(n)
 class Solution2 {
-    func singleNumber(_ nums: [Int]) {
+    func singleNumber(_ nums: [Int]) -> Int {
         var dict: [Int: Int] = [:]
         for num in nums {
             if var count = dict[num] {
@@ -45,7 +45,7 @@ class Solution2 {
 /// 时间复杂度: O(n)
 /// 空间复杂度: O(1)
 class Solution3 {
-    func singleNumber(_ nums: [Int]) {
+    func singleNumber(_ nums: [Int]) -> Int {
 //        var single = 0
 //        for num in nums {
 //            single ^= num
