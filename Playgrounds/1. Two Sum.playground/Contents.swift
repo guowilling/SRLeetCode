@@ -7,13 +7,14 @@
 //
 // 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
 //
+//
+// - 题解: 顺序遍历数组, 利用哈希表(字典)查找元素时间复杂度O(1)的特性,
+//        以元素的值为 Key, 元素的索引为 Value 暂存, 暂存哈希表中若存在 target - num 的键值对, 即命中返回.
 
 /// O(n), O(n)
-/// - 题解: 顺序遍历数组, 利用哈希表(字典)查找元素时间复杂度O(1)的特性,
-///        以元素值为 Key, 元素索引为 Value 暂存, 暂存哈希表中若存在 target - num 的键值对, 即命中返回.
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var addedDict = [Int: Int]()
+        var addedDict: [Int: Int] = [:]
         for (index, num) in nums.enumerated() {
             if let lastIndex = addedDict[target - num] {
                 return [lastIndex, index]
