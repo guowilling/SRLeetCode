@@ -53,12 +53,8 @@ class Solution2 {
         var stack: [Character] = []
         for char in S {
             if char == "c" {
-                if stack.popLast() != "b" {
-                    return false
-                }
-                if stack.popLast() != "a" {
-                    return false
-                }
+                if stack.popLast() != "b" { return false }
+                if stack.popLast() != "a" { return false }
             } else {
                 stack.append(char)
             }
