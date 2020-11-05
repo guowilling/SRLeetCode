@@ -1,9 +1,10 @@
-import UIKit
-
+//
 // 3. 无重复字符的最长子串
 //
-// 链接: https://leetcode-cn.com/problems/remove-element/
+// https://leetcode-cn.com/problems/remove-element/
+//
 // 要点: 滑动窗口, 双指针
+//
 
 class Solution1 {
     func lengthOfLongestSubstring(_ s: String) -> Int {

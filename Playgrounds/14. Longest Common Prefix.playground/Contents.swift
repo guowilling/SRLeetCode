@@ -19,6 +19,7 @@
 // 所有输入只包含小写字母 a-z。
 //
 
+/// O(mn), O(1)
 class Solution {
     func longestCommonPrefix(_ strs: [String]) -> String {
         guard !strs.isEmpty else { return "" }
