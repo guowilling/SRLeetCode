@@ -44,7 +44,7 @@ class Solution1 {
 class Solution2 {
     func maxDepth(_ root: TreeNode?) -> Int {
         guard let root = root else { return 0 }
-        var maxLevel = -1
+        var maxLevel = 0
         var stack: [(TreeNode, Int)] = []
         stack.append((root, 1))
         while !stack.isEmpty {

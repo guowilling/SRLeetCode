@@ -14,8 +14,8 @@
 /// O(n), O(1)
 class Solution1 {
     func maxSubArray(_ nums: [Int]) -> Int {
-        var sum = 0
         var res = nums[0]
+        var sum = 0
         for num in nums {
             if sum > 0 {
                 sum += num
@@ -31,8 +31,8 @@ class Solution1 {
 /// O(n), O(1)
 class Solution2 {
     func maxSubArray(_ nums: [Int]) -> Int {
-        var pre = 0
         var res = nums[0]
+        var pre = 0
         for num in nums {
             pre = max(pre + num, pre)
             res = max(res, pre)
