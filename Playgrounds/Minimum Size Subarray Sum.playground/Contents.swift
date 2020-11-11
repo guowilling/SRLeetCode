@@ -1,31 +1,55 @@
-import UIKit
-
+//
 // 209. 长度最小的子数组
 //
 // 链接: https://leetcode-cn.com/problems/minimum-size-subarray-sum/submissions/
-// 要点: 快慢指针, 使用一个 left 指针指向起始位置, 另使用一个 i 指针向前遍历并累加求和
-//      如果累加结果大于目标值, 更新 len, 并将累加和减去 left 指向的值, left 向前移动1后, 重复比较累加结果和目标值
-// 时间复杂度: O(n)
-// 空间复杂度: O(1)
+//
+// 给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的 连续 子数组，并返回其长度。如果不存在符合条件的子数组，返回 0。
+//
+// 示例：
+// 输入：s = 7, nums = [2,3,1,2,4,3]
+// 输出：2
+// 解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+//
 
-class Solution {
+/// O(n2), O(1)
+class Solution1 {
     func minSubArrayLen(_ s: Int, _ nums: [Int]) -> Int {
         if nums.isEmpty { return 0 }
-        var left = 0
-        var sum = 0
-        var len = Int.max
+        var ansLen = Int.max
         for i in 0..<nums.count {
-            sum += nums[i]
-            while sum >= s {
-                len = min(len, i + 1 - left)
-                sum -= nums[left]
-                left += 1
+            var sum = 0
+            for j in i..<nums.count {
+                sum += nums[j]
+                if sum >= s {
+                    ansLen = min(ansLen, j - i + 1)
+                    break
+                }
             }
         }
-        return len != Int.max ? len : 0
+        return ansLen != Int.max ? ansLen : 0
     }
 }
 
-let s = Solution()
+/// O(n), O(1)
+class Solution2 {
+    func minSubArrayLen(_ s: Int, _ nums: [Int]) -> Int {
+        if nums.isEmpty { return 0 }
+        var ansLen = Int.max
+        var start = 0, end = 0
+        var sum = 0
+        while end < nums.count {
+            sum += nums[end]
+            while sum >= s {
+                ansLen = min(ansLen, end - start + 1)
+                sum -= nums[start]
+                start += 1
+            }
+            end += 1
+        }
+        return ansLen != Int.max ? ansLen : 0
+    }
+}
+
+let s = Solution2()
 assert(s.minSubArrayLen(7, [2 ,3, 1, 2, 4, 3]) == 2)
 assert(s.minSubArrayLen(6, [10, 2, 3]) == 1)
