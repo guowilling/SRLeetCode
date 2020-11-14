@@ -1,6 +1,6 @@
-import UIKit
-
+//
 // 328. 奇偶链表
+//
 
 class ListNode {
     var val: Int
