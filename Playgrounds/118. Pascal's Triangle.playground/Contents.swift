@@ -20,11 +20,13 @@
 
 /// O(n²), O(n²)
 class Solution {
-    func generate(_ nowRows: Int) -> [[Int]] {
+    func generate(_ numRows: Int) -> [[Int]] {
+        if numRows == 0 { return [] }
+        
         var triangle: [[Int]] = []
         triangle.append([1])
         
-        for rowIndex in 1..<nowRows {
+        for rowIndex in 1..<numRows {
             var row: [Int] = []
             let preRow = triangle[rowIndex - 1]
             row.append(1)

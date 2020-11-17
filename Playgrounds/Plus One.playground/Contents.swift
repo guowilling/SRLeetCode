@@ -1,12 +1,12 @@
-import UIKit
-
+//
 // 66. 加一
-
-// 链接: https://leetcode-cn.com/problems/plus-one/
+//
+// https://leetcode-cn.com/problems/plus-one/
+//
 // 要点: 逆序遍历, 加一后判断对10求余是否为0, 不为0则为结果直接返回即可. 为0则继续进位, 如果遍历结束仍未返回则添加一位最高位.
-// 时间复杂度: O(n)
-// 空间复杂度: O(1)
+//
 
+/// O(n), O(1)
 class Solution {
     func plusOne(_ digits: [Int]) -> [Int] {
         var result = digits
