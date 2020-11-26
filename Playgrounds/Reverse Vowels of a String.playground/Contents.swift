@@ -1,12 +1,20 @@
-import UIKit
-
+//
 // 345. 反转字符串中的元音字母
 //
-// 链接: https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
-// 要点: 指针碰撞, 使用一头一尾双指针相向遍历数组, 跳过非元音字符
-// 时间复杂度: O(n)
-// 空间复杂度: O(1)
+// https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
+//
+// 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
+//
+// 示例 1：
+// 输入："hello"
+// 输出："holle"
+//
+// 示例 2：
+// 输入："leetcode"
+// 输出："leotcede"
+//
 
+/// O(n), O(1)
 class Solution {
     func reverseVowels(_ s: String) -> String {
         var chars = Array(s)
