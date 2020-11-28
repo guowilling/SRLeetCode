@@ -1,8 +1,8 @@
-import UIKit
-
+//
 // 71. 简化路径
 // 时间复杂度: O(N)
 // 空间复杂度: O(N)
+//
 
 class Solution {
     func simplifyPath(_ path: String) -> String {

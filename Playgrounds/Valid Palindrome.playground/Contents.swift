@@ -1,11 +1,11 @@
-import UIKit
-
+//
 // 125. 验证回文串
 //
 // 链接: https://leetcode-cn.com/problems/valid-palindrome/
 // 要点: 指针碰撞, 使用一头一尾双指针相向遍历数组, 跳过非比较字符
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
+//
 
 class Solution {
     func isPalindrome(_ s: String) -> Bool {
