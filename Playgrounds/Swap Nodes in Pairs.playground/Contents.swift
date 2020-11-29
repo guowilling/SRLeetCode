@@ -10,6 +10,7 @@ class ListNode {
     }
 }
 
+/// 递归解法
 class Solution {
     func swapPairs(_ head: ListNode?) -> ListNode? {
         guard let first = head, let second = first.next else { return head }
