@@ -45,9 +45,7 @@ class Solution {
             node = node.next!
         }
         
-        if carry > 0 {
-            node.next = ListNode(carry)
-        }
+        if carry > 0 { node.next = ListNode(carry) }
         
         return dummy.next
     }
