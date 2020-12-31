@@ -1,5 +1,4 @@
 /// Bubble Sort
-/// - Parameter array: To be sorted array
 func bubbleSort<Element: Comparable>(_ array: inout [Element]) {
     guard array.count > 2 else { return }
     for end in (1..<array.count).reversed() {
@@ -14,8 +13,7 @@ func bubbleSort<Element: Comparable>(_ array: inout [Element]) {
     }
 }
 
-/// Bubble Sort
-/// - Parameter array: To be sorted array
+/// Selection Sort
 func selectionSort<Element: Comparable>(_ array: inout [Element]) {
     guard array.count > 2 else { return }
     for curr in 0..<array.count {
@@ -32,9 +30,8 @@ func selectionSort<Element: Comparable>(_ array: inout [Element]) {
 }
 
 
-/// Insetion Sort
-/// - Parameter array: To be sorted array
-func insetionSort<Element: Comparable>(_ array: inout [Element]) {
+/// Insertion Sort
+func insertionSort<Element: Comparable>(_ array: inout [Element]) {
     guard array.count > 2 else { return }
     for curr in 1..<array.count {
         for i in (1...curr).reversed() {
@@ -47,10 +44,25 @@ func insetionSort<Element: Comparable>(_ array: inout [Element]) {
     }
 }
 
+/// Quick Sort
+func quicksort(_ array: [Int]) -> [Int] {
+    guard array.count > 1 else { return array }
+    
+    let pivot = array[array.count / 2]
+    let left = array.filter { $0 < pivot }
+    let middle = array.filter { $0 == pivot }
+    let right = array.filter { $0 > pivot }
+    
+    return quicksort(left) + middle + quicksort(right)
+}
+
 var testArray = [15, 5, 35, 25, 45]
 let sortedArray = [5, 15, 25, 35, 45]
 
 //bubbleSort(&testArray)
 //selectionSort(&testArray)
-//insetionSort(&testArray)
-assert(testArray == sortedArray)
+//insertionSort(&testArray)
+//assert(testArray == sortedArray)
+
+let resultArray = quicksort(testArray)
+assert(resultArray == sortedArray)
