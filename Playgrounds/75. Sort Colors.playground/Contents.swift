@@ -79,7 +79,6 @@ class Solution2 {
 /// O(n), O(1)
 class Solution {
     func sortColors(_ nums: inout [Int]) {
-        if nums.isEmpty { return }
         var curr = 0, left = 0, right = nums.count - 1
         while curr <= right {
             if nums[curr] == 0 {
